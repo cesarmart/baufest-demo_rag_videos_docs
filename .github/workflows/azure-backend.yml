@@ -19,16 +19,19 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Validate requirements (optional)
+      - name: Vendor Python deps into package
         run: |
+          mkdir -p package/.python_packages/lib/site-packages
           python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
+          pip install -r backend/requirements.txt -t package/.python_packages/lib/site-packages
 
-      # (Optional) Add test step here
-
-      - name: Create deployment package (zip)
+      - name: Copy app code into package
         run: |
-          cd backend
+          cp -r backend/* package/
+
+      - name: Zip deployment package
+        run: |
+          cd package
           zip -r ../backend.zip .
 
       - name: Deploy to Azure Web App
