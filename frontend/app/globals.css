@@ -1,0 +1,126 @@
+:root {
+  --font-body: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-heading: 'Barlow Semi Condensed', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Default (classic) palette */
+  --page-bg: #f5f7fb;
+  --body-text: #0f172a;
+  --header-bg: #ffffff;
+  --header-border: #e2e8f0;
+  --title-color: #0f172a;
+  --panel-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --user-bubble-bg: #e2e8f0;
+  --user-text: #0a0f1a; /* darker for better contrast */
+  --assistant-bubble-bg: #f8fafc;
+  --assistant-text: #0f172a;
+  --timestamp-text: #94a3b8;
+  --btn-primary-bg: #2563eb;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #f1f5f9;
+  --btn-dark-bg: #0f172a;
+  --btn-dark-text: #ffffff;
+  --btn-voice-bg: #10b981;
+
+  --brand-bg: #0e1930; /* deep navy */
+  --brand-accent: #FFE749; /* brand yellow */
+  --brand-lime: #C1FF44; /* mic green */
+  --brand-fuchsia: #FF3AAC; /* recording stop */
+}
+
+/* Corporate theme overrides */
+html[data-theme="baufest"] {
+  /* Light page with dark brand header */
+  --page-bg: #f5f7fb;
+  --body-text: #0f172a;
+  --header-bg: #0e1930;
+  --header-border: #10213c;
+  --title-color: #ffffff;
+  --panel-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --user-bubble-bg: #cfd8e3; /* darker bubble for user */
+  --user-text: #0b0f19;      /* stronger contrast for user text */
+  --assistant-bubble-bg: #ffffff;
+  --assistant-text: #0f172a;
+  --timestamp-text: #64748b;
+  --btn-primary-bg: #2f6ae8;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #f1f5f9;
+  --btn-dark-bg: #0a1224;
+  --btn-dark-text: #ffffff;
+  --btn-voice-bg: var(--brand-lime);
+}
+
+/* Font faces */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  src: url('../fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  src: url('../fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--page-bg);
+  color: var(--body-text);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+}
+
+/* Form controls */
+input[type="checkbox"] {
+  accent-color: var(--brand-accent);
+}
+
+/* Buttons */
+.btn {
+  transition: background-color .15s ease, box-shadow .15s ease, transform .02s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+.btn:focus-visible {
+  outline: 2px solid rgba(255, 231, 73, .9);
+  outline-offset: 2px;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-yellow { background: var(--brand-accent); color: #0f172a; }
+.btn-yellow:hover { background: #E6D441; }
+.btn-yellow:active { background: #D6C93B; }
+
+.btn-voice { background: var(--brand-lime); color: #0f172a; }
+.btn-voice:hover { background: #B2F23E; }
+.btn-voice:active { background: #A6E63A; }
+.btn-voice.recording { background: var(--brand-fuchsia); color: #ffffff; }
+.btn-voice.recording:hover { background: #E2339C; }
+.btn-voice.recording:active { background: #CC2E8D; }

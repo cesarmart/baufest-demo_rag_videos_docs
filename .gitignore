@@ -1,0 +1,9 @@
+.env
+frontend/.env.local
+frontend/.next
+frontend/node_modules
+backend/venv
+backend/__pycache__
+backend/uploads
+backend/static
+backend/Tesseract-OCR
